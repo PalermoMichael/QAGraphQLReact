@@ -3,7 +3,6 @@ import { graphql } from 'react-apollo';
 import fetchDeviationsQuery from '../queries/fetchDeviations';
 
 
-
 class DescriptionList extends Component {
     renderDescription() {
         // console.log(this.props.description);

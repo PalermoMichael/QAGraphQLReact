@@ -20,6 +20,7 @@ import CapaCreate from './components/CapaCreate';
 import ChangeControlCreate from './components/ChangeControlCreate';
 import Navbar from './components/Navbar';
 import DeviationUpdate from './components/DeviationUpdate';
+import DeviationSearch from './components/DeviationSearch';
 
 const networkInterface = createNetworkInterface({
   uri: '/graphql',
@@ -53,6 +54,7 @@ const Root = () => {
             <Route exact path="/deviations/:id/update" component={requireAuth(DeviationUpdate)} />
             <Route path="/capas" component={CapaCreate} />
             <Route path="/changecontrols" component={ChangeControlCreate} />
+            <Route path="/searchdeviations" component={DeviationSearch} />
         </Route>
       </Router>
     </ApolloProvider>

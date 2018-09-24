@@ -21,6 +21,14 @@ const RootQueryType = new GraphQLObjectType({
     fields: () => ({
         deviations: {
             type: new GraphQLList(DeviationType),
+            args: {
+                status: {
+                    type: GraphQLString
+                },
+                department: {
+                    type: GraphQLString
+                }
+            },
             resolve() {
                 return Deviation.find({});
             }
@@ -36,6 +44,19 @@ const RootQueryType = new GraphQLObjectType({
                 id
             }) {
                 return Deviation.findById(id);
+            }
+        },
+        openDeviations: {
+            type: DeviationType,
+            args: {
+                status: {
+                    type: GraphQLString
+                },
+            },
+            resolve(parentValue, {
+                status
+            }){
+                return filter(deviations, { status: "Open"})
             }
         },
         lot: {

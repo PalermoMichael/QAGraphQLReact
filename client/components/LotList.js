@@ -31,7 +31,7 @@ class LotList extends Component {
 
         return (
             <div>
-            <h5>Associated Lot Numbers</h5>
+            <h5>Impacted Lot Numbers</h5>
             <ul className="collection">{this.renderLots()}</ul>
             </div>
         );
