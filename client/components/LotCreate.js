@@ -25,7 +25,7 @@ class LotCreate extends Component {
         return(
             <div>
                 <form onSubmit={this.onSubmit.bind(this)}>
-                    <label>Add Affected Lot Number to Deviation</label>
+                    <label>Add Impacted Lot Number to Deviation</label>
                     <input
                     value={this.state.contents}
                     onChange={event => this.setState({ contents: event.target.value })}

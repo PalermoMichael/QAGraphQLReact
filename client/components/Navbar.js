@@ -52,6 +52,7 @@ class Navbar extends Component {
                                 <li><Link to="/deviations" className="blue-text">Deviations</Link></li>
                                 <li><Link to="/capas" className="blue-text">CAPAs</Link></li>
                                 <li><Link to="/changecontrols" className="blue-text">Change Controls</Link></li>
+                                <li><Link to="/searchdeviations">Search</Link></li>
                         </ul>
                         <ul className="left">
                             {this.renderButtons()}
