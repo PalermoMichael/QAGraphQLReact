@@ -1,3 +1,4 @@
+require('babel-polyfill');
 const webpack = 'webpack';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
@@ -5,16 +6,17 @@ const path = require('path');
 module.exports = {
 	entry: ['babel-polyfill', path.join(__dirname, 'client/index.js')],
 	output: {
-		path: '/',
+		path: path.join(__dirname, '/'),
 		filename: 'bundle.js'
 	},
-
 	module: {
 		rules: [
 			{
-				use: 'babel-loader',
 				test: /\.js$/,
-				exclude: /node_modules/
+				exclude: /node_modules/,
+				use: {
+					loader: 'babel-loader'
+				}
 			},
 			{
 				use: ['style-loader', 'css-loader'],
@@ -24,9 +26,13 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: 'client/index.html'
+			template: './client/index.html'
 		})
-	]
+	],
+	devServer: {
+		contentBase: path.resolve(__dirname, 'client/index.js'),
+		hot: true
+	}
 };
 // const path = require('path');
 
