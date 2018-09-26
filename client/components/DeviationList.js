@@ -40,7 +40,7 @@ class DeviationList extends Component {
             );
         } return (
             <div>
-            <h2>2018 Deviation Tracking Log</h2>
+            <h2>2018 Deviation Log</h2>
                 <ul className="collection">
                     {this.renderDeviations()}
                 </ul>
