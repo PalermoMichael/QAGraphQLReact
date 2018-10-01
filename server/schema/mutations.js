@@ -12,6 +12,7 @@ const Lot = mongoose.model('lot');
 const DeviationType = require('./deviation_type');
 const LotType = require('./lot_type');
 const UserType = require('./user_type');
+const CapaType = require('./capa_type');
 const AuthService = require('../services/auth');
 
 const mutation = new GraphQLObjectType({
@@ -74,6 +75,70 @@ const mutation = new GraphQLObjectType({
                     datediscovered,
                     dateassigned
                 })).save();
+            }
+        },
+        addCapa: {
+            type: CapaType,
+            args: {
+                title: {
+                    type: GraphQLString
+                },
+                client: {
+                    type: GraphQLInt
+                },
+                capaOwner: {
+                    type: GraphQLString
+                },
+                assignedBy: {
+                    type: GraphQLString
+                },
+                department: {
+                    type: GraphQLString
+                },
+                investigationstatus: {
+                    type: GraphQLString
+                },
+                capaplanstatus: {
+                    type: GraphQLString
+                },
+                effectivenessstatus: {
+                    type: GraphQLString
+                },
+                investigationduedate: {
+                    type: GraphQLString
+                },
+                effectivenessduedate: {
+                    type: GraphQLString
+                },
+                dateassigned: {
+                    type: GraphQLString
+                }},
+                resolve(parentValue, {
+                    title,
+                    client,
+                    capaOwner,
+                    assignedBy,
+                    department,
+                    capaplanstatus,
+                    effectivenessstatus,
+                    investigationstatus,
+                    investigationduedate,
+                    effectivenessduedate,
+                    dateassigned
+                }) {
+                    return (new Capa({
+                        title,
+                        client,
+                        capaOwner,
+                        assignedBy,
+                        department,
+                        investigationstatus,
+                        capaplanstatus,
+                        effectivenessduedate,
+                        effectivenessstatus,
+                        investigationduedate,
+                        dateassigned
+                    })).save();
             }
         },
         updateDeviation:{           

@@ -18,6 +18,15 @@ const DescriptionType = new GraphQLObjectType({
         text: {
             type: GraphQLString
         },
+        capa: {
+            type: require('./capa_type'),
+            resolve(parentValue) {
+                return Description.findById(parentValue).populate('capa')
+                .then(description => {
+                    return description.capa
+                })
+            }
+        },
         deviation: {
             type: require('./deviation_type'),
             resolve(parentValue) {
