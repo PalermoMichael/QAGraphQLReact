@@ -4,9 +4,7 @@ const moment = require('moment');
 const classificationEnums = ['Major', 'Minor', 'Critical'];
 const statusEnums = ['Void', 'Open', 'Closed'];
 const deviationtypeEnums = ['Unplanned', 'Planned'];
-
 const formattedDate = moment(Schema.occurrencedate).format('YYYY-MM-DD');
-
 
 const DeviationSchema = new Schema({
     title: {

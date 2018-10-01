@@ -15,6 +15,10 @@ const LotType = require('./lot_type');
 const DescriptionType = require('./description_type');
 const User = mongoose.model('user');
 const UserType = require('./user_type');
+const Capa = mongoose.model('capa');
+const CapaType = require('./capa_type');
+const Doc = mongoose.model('doc');
+const Comments = mongoose.model('comment');
 
 const RootQueryType = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -31,6 +35,33 @@ const RootQueryType = new GraphQLObjectType({
             },
             resolve() {
                 return Deviation.find({});
+            }
+        },
+        capas: {
+            type: new GraphQLList(CapaType),
+            args: {
+                id: {
+                    type: GraphQLID
+                },
+                title: {
+                    type: GraphQLString
+                }
+            },
+            resolve() {
+                return Capa.find({});
+            }
+        },
+        capa: {
+            type: CapaType,
+            args: {
+                id: {
+                    type: new GraphQLNonNull(GraphQLID)
+                }
+            },
+            resolve(parentValue, {
+                id
+            }) {
+                return Capa.findById(id);
             }
         },
         deviation: {
