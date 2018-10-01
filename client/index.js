@@ -18,7 +18,6 @@ import DeviationCreate from './components/DeviationCreate';
 import DeviationDetail from './components/DeviationDetail';
 import CapaCreate from './components/CapaCreate';
 import ChangeControlCreate from './components/ChangeControlCreate';
-import Navbar from './components/Navbar';
 import DeviationUpdate from './components/DeviationUpdate';
 import DeviationSearch from './components/DeviationSearch';
 
@@ -36,7 +35,8 @@ const client = new ApolloClient({
   dataIdFromObject: o => o.id,
   networkInterface,
   link: ApolloLink.from([]),
-  cache: cache
+  cache: cache,
+  credentials: 'include'
 });
 
 const Root = () => {

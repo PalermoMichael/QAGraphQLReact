@@ -6,9 +6,8 @@ class Header extends Component {
     onLogoutClick() {
         this.props.mutate({
             refetchqueries: [{ query }]
-        });
+        }).then(() => hashHistory.push('/login'));
     }
-
     renderButtons() {
         const { loading, user } = this.props.data;
 
@@ -19,7 +18,7 @@ class Header extends Component {
                 <li><a onClick={this.onLogoutClick.bind(this)}>Logout</a></li>
             );
         } else {
-            return(
+            return (
             <div>
                 <li>
                     <Link to="/signup">Signup</Link>
@@ -31,13 +30,12 @@ class Header extends Component {
             );
         }
     }
-
     render() {
         return (
             <nav>
                 <div className="nav-wrapper">
                     <Link to="/" className="brand-logo left">
-                        Cognate QA
+                        Cognate
                     </Link>
                     <ul className="right">
                         {this.renderButtons()}

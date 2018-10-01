@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AuthForm from './AuthForm';
-import { compose, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
 import mutation from '../queries/User/Login';
 import query from '../queries/User/fetchCurrentUser';
 import { hashHistory } from 'react-router';
