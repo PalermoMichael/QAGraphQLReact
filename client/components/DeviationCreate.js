@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
-import { Link, hashHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 import fetchDeviationsQuery from '../queries/fetchDeviations';
 import addDeviation from '../queries/addDeviation';
 
