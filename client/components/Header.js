@@ -5,10 +5,11 @@ import query from '../queries/User/fetchCurrentUser';
 import mutation from '../queries/User/Logout';
 
 class Header extends Component {
-	onLogout() {       
-		this.props.mutate({ 
+	onLogout({ user }) {       
+		this.props.mutate({
+            variables: { user }, 
             refetchQueries: [{ query }]
-        });       
+        }).then(this.props.data.reftch());       
 	}
 
 	renderButtons() {
