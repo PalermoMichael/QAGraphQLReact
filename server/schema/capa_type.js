@@ -35,22 +35,22 @@ const CapaType = new GraphQLObjectType({
 		department: {
 			type: GraphQLString
 		},
-		investigationstatus: {
+		investigationStatus: {
 			type: GraphQLString
 		},
-		capaplanstatus: {
+		capaPlanStatus: {
 			type: GraphQLString
 		},
-		effectivenessstatus: {
+		effectivenessStatus: {
 			type: GraphQLString
 		},
-		investigationduedate: {
+		investigationDueDate: {
 			type: GraphQLString
 		},
-		effectivenessduedate: {
+		effectivenessDueDate: {
 			type: GraphQLString
 		},
-		dateassigned: {
+		dateAssigned: {
 			type: GraphQLString
 		},
 		docs: {
