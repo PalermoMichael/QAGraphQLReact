@@ -46,31 +46,30 @@ const CapaSchema = new Schema(
 				'Facilities',
 				'QC Operations',
 				'QA',
-				'QA Doc Control',
-				'Validation'
+				'Doc Control'
 			]
 		},
-		investigationstatus: {
+		investigationStatus: {
 			type: String,
 			enum: statusEnums
 		},
-		capaplanstatus: {
+		capaPlanStatus: {
 			type: String,
 			enum: statusEnums
 		},
-		effectivenessstatus: {
+		effectivenessStatus: {
 			type: String,
 			enum: ['Void', 'Completed', 'Pending', 'On-time']
 		},
-		investigationduedate: {
+		investigationDueDate: {
 			type: String,
 			default: formattedDate
 		},
-		effectivenessduedate: {
+		effectivenessDueDate: {
 			type: String,
 			default: formattedDate
 		},
-		dateassigned: {
+		dateAssigned: {
 			type: String,
 			default: formattedDate
 		},

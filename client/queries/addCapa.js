@@ -7,6 +7,7 @@ const addCapa = gql`
         $capaOwner: String,
         $assignedBy: String,
         $department: String,
+        $riskLevel: String,
         $investigationStatus: String,
         $capaPlanStatus: String,
         $effectivenessStatus: String,
@@ -19,6 +20,7 @@ const addCapa = gql`
         capaOwner: $capaOwner,
         assignedBy: $assignedBy,
         department: $department,
+        riskLevel: $riskLevel,
         investigationStatus: $investigationStatus,
         capaPlanStatus: $capaPlanStatus,
         effectivenessStatus: $effectivenessStatus,
@@ -30,6 +32,7 @@ const addCapa = gql`
         capaOwner
         assignedBy
         department
+        riskLevel
         investigationStatus
         capaPlanStatus
         effectivenesStatus
